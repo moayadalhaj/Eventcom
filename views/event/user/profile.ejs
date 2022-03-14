@@ -1,0 +1,42 @@
+<%- include('../../partials/header') -%>
+  <%- include('../../partials/navbar') -%>
+    <div class="container ml-auto">
+      <div class="row mt-4">
+        <div class="col-md-3">
+          <% if(user){%>
+            <img src="/images/<%= user.avatar%>" alt="avatar">
+            <%} else{%>
+              <div class="display-4">
+                <p class="mx-auto text-center bg-secondary text-white rounded-circle"
+                  style="height: 4em; width: 4em; padding: 20%      ;">
+                  <%= user.email[0] + user.email[1]%>
+                </p>
+              </div>
+              <%}%>
+        </div>
+        <div class="col-md-9">
+          <h1 class="display-4">Profile</h1>
+          <hr>
+          <% if(locals.success && success !="" ){%>
+            <div class="alert alert-success">
+              <%= success%>
+            </div>
+            <%}%>
+
+              <p>
+                <% if(user){%>
+                  welcome .. your email <%= user.email%>
+                    <%}%>
+              </p>
+
+              <form action="/users/uploadAvatar" method="post" enctype="multipart/form-data">
+                <input type="file" name="avatar" id="avatar" onchange="readURL(this)">
+                <button type="submit" class="btn btn-primary">Upload</button>
+              </form>
+              <hr>
+              <h1 class="display-4">Image Preview</h1>
+              <img src="" alt="image" id="imagePlaceholder" height="200px" width="300px" style="display: none;">
+        </div>
+      </div>
+    </div>
+    <%- include('../../partials/footer') -%>
