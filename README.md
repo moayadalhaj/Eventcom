@@ -18,7 +18,7 @@
 Fork the repository. then clone the repo locally by doing -
 
 ```bash
-git clone https://github.com/moayadalhaj/nodeFullApp.git
+https://github.com/moayadalhaj/Eventcom.git
 ```
 
 ### Step 2: Install Dependencies
@@ -26,7 +26,7 @@ git clone https://github.com/moayadalhaj/nodeFullApp.git
 cd into the directory
 
 ```bash
-cd nodeFullApp
+cd Eventcom
 ```
 
 install all the dependencies
